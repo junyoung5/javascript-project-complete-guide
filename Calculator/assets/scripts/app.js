@@ -6,6 +6,7 @@
 // code formatting: shit + alt + F
 // add next occurence command + d
 // move line up: alt + arrow
+// testtest
 
 const defaultResult = 0;
 let currentResult = defaultResult;
@@ -43,8 +44,6 @@ function calculateResult(calculationType) {
     )   {
         return;
     } 
-
-    
     const enteredNumber = getUserNumberInput();
     const initialNumber = currentResult;
     let mathOperator;
