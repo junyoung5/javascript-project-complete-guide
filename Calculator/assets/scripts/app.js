@@ -1,5 +1,5 @@
 // Junyoung Oh
-// practice javaScript
+// Basic Javascript
 
 // shortcut list
 // line comment: shift + /
@@ -43,6 +43,8 @@ function calculateResult(calculationType) {
     )   {
         return;
     } 
+
+    
     const enteredNumber = getUserNumberInput();
     const initialNumber = currentResult;
     let mathOperator;
