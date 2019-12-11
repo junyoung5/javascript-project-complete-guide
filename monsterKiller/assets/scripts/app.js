@@ -33,6 +33,24 @@ function writeToLog(ev, val, monsterHealth, playerHealth){
         finalPlayerHealth = playerHealth
     }
 
+    if (ev === LOG_EVENT_PLAYER_ATTACK){
+        logEntry.target('MONSTER');
+    } else if (ev === LOG_EVENT_PLAYER_STRONG_ATTACK){
+        logEntry.target('MONSTER');
+    } else if (ev === LOG_EVENT_MONSTER_ATTACK) {
+        logEntry.target('PLAYER');
+    } else if (ev === LOG_EVENT_PLAYER_HEAL) {
+        logEntry.target('PLAYER');
+    } else if (eve === LOG_EVENT_GAME_OVER) {
+        logEntry = {
+            event = ev,
+            value = val,
+            finalMonsterHealth = monsterHealth,
+            finalPlayerHealth = playerHealth
+        }
+    }
+
+    battleLog.push(logEntry);
 
 }
 function reset() {
