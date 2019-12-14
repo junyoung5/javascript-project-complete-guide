@@ -16,6 +16,7 @@ const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 let enteredValue = prompt('Maximum life for you and the monster.', '100'); //to get user input
 let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
+let lastLooggedEntry ;
 
 if (isNaN(chosenMaxLife) || chosenMaxLife <= 0){
     chosenMaxLife = 100;
@@ -194,13 +195,16 @@ function printLogHandler(){
 
     let i = 0;
     for (const logEntry of battleLog){
-        console.log(`#${i}`);
-        for (const key in logEntry){
+        if (!lastLooggedEntry && lastLooggedEntry !== 0 || lastLooggedEntry < i){
+            console.log(`#${i}`);
+            for (const key in logEntry){
             console.log(`${key} => ${logEntry[key]}`);
+            }
+            lastLooggedEntry = i;
+            break;
         }
         i++;
     }
-    
 }
 
 attackBtn.addEventListener('click', attackHandler);
