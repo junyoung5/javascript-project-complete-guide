@@ -1,3 +1,4 @@
+//Assignment 
 //Task1
 const task1El1 = document.getElementById('task-1');
 const task1El2 = document.querySelector('#task-1');
