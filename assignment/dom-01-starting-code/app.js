@@ -1,17 +1,25 @@
-//const listItemElements = document.querySelectorAll('li');
-const listItemElements = document.getElementsByTagName('li'); // same with above line
+//traversing & styling DOM
+const ul = document.body.firstElementChild.nextElementSibling;
+const liFirst = ul.firstElementChild;
+
+console.log(liFirst);
+
+const section = document.querySelector('section');
+const button = document.querySelector('button');
 
 
-for (listItemEl of listItemElements){
-    console.dir(listItemEl);
-}
+// section.style.backgroundColor = 'blue'; //inline style
+section.className = '';
+section.className = 'red-bg';
 
-const h1 = document.getElementById('main-title')
-h1.textContent = 'Some New Title!';
-h1.style.color = 'white';
-h1.style.backgroundColor = 'Black';
+button.addEventListener('click', () => {
+    // if(section.className === 'red-bg visible'){
+    //     section.className = 'red-bg invisible';
+    // } else {
+    //     section.className = 'red-bg visible';
+    // }
 
-const li = document.querySelector('li:last-of-type');
-li.textContent = li.textContent + ' (changed!)';
+    //power of classList method 
+    section.classList.toggle('invisible');
+})
 
-const body = document.body;
